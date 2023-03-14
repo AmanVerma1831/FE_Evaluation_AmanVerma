@@ -1,11 +1,13 @@
 import React from 'react'
-
 function Navbar() {
 
     const onLogout = () => {
         localStorage.setItem("loggedIn", false);
         window.location.reload()
     }
+    console.log(localStorage.getItem("loggedIn"))
+
+
 
     return (
         <div className='flex justify-between px-8 md:px-20 py-10 border border-black m-5 rounded-sm'>
@@ -20,6 +22,8 @@ function Navbar() {
                     <a className="text-blue-500 hover:text-red-800" href='/feed'>Feed</a>
                 </li>
             </ul>
+
+
             <button className='text-red-900' onClick={onLogout}>Log Out</button>
         </div>
     )

@@ -23,7 +23,9 @@ function Auth() {
         if (user === "aman" && pass === "aaa") {
             localStorage.setItem("loggedIn", true);
             setLogged(true)
+            window.location.reload()
             navigate('/feed');
+
 
         }
         else {
@@ -40,7 +42,7 @@ function Auth() {
 
 
     return (
-        <div className='flex text-center justify-center'>
+        <div className='flex flex-col text-center justify-center'>
 
             <form>
                 <div className="mb-6">
@@ -54,7 +56,7 @@ function Auth() {
                 <button type="submit" onClick={onClick} className="text-white bg-blue-700 px-5 py-2 rounded-md">Submit</button>
             </form>
             <div>
-                <h2 className='text-red-700'>{message && "Your Password is wrong"}</h2>
+                <h2 className='text-red-700'>{message && "Your Email/Password is wrong"}</h2>
             </div>
 
         </div>
