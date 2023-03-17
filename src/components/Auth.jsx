@@ -38,7 +38,7 @@ function Auth() {
         if (localStorage.getItem("loggedIn") === "true" || logged) {
             navigate('/feed');
         }
-    }, [])
+    })
 
 
     return (

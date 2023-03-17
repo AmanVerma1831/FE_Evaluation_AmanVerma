@@ -12,7 +12,7 @@ function Feed() {
             navigate('/auth');
         }
 
-    }, [])
+    })
     function debounce(func, timeout = 300) {
         let timer;
         return (...args) => {
