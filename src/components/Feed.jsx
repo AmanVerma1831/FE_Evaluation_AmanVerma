@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 function Feed() {
     const navigate = useNavigate();
     //const [value, setValue] = useState()
-    const [time, setTime] = useState(0)
+    // const [time, setTime] = useState(0)
     const [feedData, setFeedData] = useState([]);
 
     useEffect(() => {
@@ -13,7 +13,7 @@ function Feed() {
         }
 
     }, [])
-    function debounce(func, timeout = 1000) {
+    function debounce(func, timeout = 300) {
         let timer;
         return (...args) => {
             clearTimeout(timer)
@@ -33,9 +33,10 @@ function Feed() {
                 }
             })
     }
+
+    const v = debounce((s) => fetchCall(s));
     const changeHandler = (event) => {
-        const v = debounce(() => fetchCall(event.target.value))
-        v()
+        v(event.target.value)
     }
 
     return (
